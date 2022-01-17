@@ -34,7 +34,5 @@ Exchanges currency from ILS to USD <br>
 A random number between a range that the user set <br>
 -google <br>
 Shows the first image that appear when you search the keyword that the user typed (no bad words) <br>
-
-
-
+ <br> <br> <br>
 Also as you can see I didn't create any command handler...  so have fun looking at it!
