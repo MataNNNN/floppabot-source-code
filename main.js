@@ -374,6 +374,8 @@ client.on('message', async message => {
             message.channel.send(image_result[0].url);
         }
     }
+
+    // CSGO skin prices command
     if (command == 'getitemprice') {
 
         let gunName = args[0];
@@ -384,7 +386,6 @@ client.on('message', async message => {
             let skinName = args[3];
             let condition = args[4];
             let api_CSGO = `http://csgobackpack.net/api/GetItemPrice/?currency=USD&id=${gunName[0]}%20${gunName[1]}%20${slash}%20${skinName}%20${condition}&time=7&icon=1`;
-            console.log(api_CSGO);
             async function csgoSkins() {
                 const response = await fetch(api_CSGO);
                 const data = await response.json();
@@ -409,9 +410,13 @@ client.on('message', async message => {
                         name: 'Currency',
                         value: data.currency
                     })
-                message.channel.send(csgoEmbed);
+                message.channel.send({embeds: [csgoEmbed]});
             }
             csgoSkins();
+            
+            if(!gunName || !skinName || !condition){
+                message.channel.send("How to use: -getitemprice `<gun name> | <skin name> <condition>` example: `M4A4 | Howl (Field-Tested)`");
+            }
 
 
         } else {
@@ -420,7 +425,6 @@ client.on('message', async message => {
             let skinName = args[2];
             let condition = args[3];
             let api_CSGO = `http://csgobackpack.net/api/GetItemPrice/?currency=USD&id=${gunName}%20${slash}%20${skinName}%20${condition}&time=7&icon=1`;
-            console.log(api_CSGO);
 
             async function csgoSkins() {
                 const response = await fetch(api_CSGO);
@@ -446,16 +450,14 @@ client.on('message', async message => {
                         name: 'Currency',
                         value: data.currency
                     })
-                message.channel.send(csgoEmbed);
+                message.channel.send({embeds: [csgoEmbed]});
             }
             csgoSkins();
 
-
+            if(!gunName || !skinName || !condition){
+                message.channel.send("How to use: -getitemprice `<gun name> | <skin name> <condition>` example: `M4A4 | Howl (Field-Tested)`");
+            }
         }
-        let skinName = args[3];
-
-
-
     }
 });
 
