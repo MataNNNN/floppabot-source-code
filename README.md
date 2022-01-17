@@ -12,7 +12,7 @@ csgo skin prices api: https://csgobackpack.net the api can be found here: https:
 Latency <br>
 -gosha <br>
 A picture of gosha (very handsome) <br>
--floppacock <br>
+<b>-floppacock <br>
 Your cock size <br>
 -floppalink <br>
 A link to the server <br>
