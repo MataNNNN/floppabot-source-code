@@ -386,6 +386,12 @@ client.on('message', async message => {
             let skinName = args[3];
             let condition = args[4];
             let api_CSGO = `http://csgobackpack.net/api/GetItemPrice/?currency=USD&id=${gunName[0]}%20${gunName[1]}%20${slash}%20${skinName}%20${condition}&time=7&icon=1`;
+
+        if(!gunName || !skinName || !condition){
+            message.channel.send("How to use: -getitemprice `<gun name> | <skin name> <condition>` example: `M4A4 | Howl (Field-Tested)`");
+        }
+        else{
+
             async function csgoSkins() {
                 const response = await fetch(api_CSGO);
                 const data = await response.json();
@@ -413,10 +419,7 @@ client.on('message', async message => {
                 message.channel.send({embeds: [csgoEmbed]});
             }
             csgoSkins();
-            
-            if(!gunName || !skinName || !condition){
-                message.channel.send("How to use: -getitemprice `<gun name> | <skin name> <condition>` example: `M4A4 | Howl (Field-Tested)`");
-            }
+        }
 
 
         } else {
@@ -426,37 +429,40 @@ client.on('message', async message => {
             let condition = args[3];
             let api_CSGO = `http://csgobackpack.net/api/GetItemPrice/?currency=USD&id=${gunName}%20${slash}%20${skinName}%20${condition}&time=7&icon=1`;
 
-            async function csgoSkins() {
-                const response = await fetch(api_CSGO);
-                const data = await response.json();
-
-                const csgoEmbed = new MessageEmbed()
-                    .setColor('#0099ff')
-                    .setTitle(`${gunName} | ${skinName} ${condition}`)
-                    .setImage(data.icon)
-                    .addFields({
-                        name: 'Average Price',
-                        value: data.average_price
-                    }, {
-                        name: 'Median Price',
-                        value: data.median_price
-                    }, {
-                        name: 'Lowest Price',
-                        value: data.lowest_price
-                    }, {
-                        name: 'Highest Price',
-                        value: data.highest_price
-                    }, {
-                        name: 'Currency',
-                        value: data.currency
-                    })
-                message.channel.send({embeds: [csgoEmbed]});
-            }
-            csgoSkins();
-
             if(!gunName || !skinName || !condition){
                 message.channel.send("How to use: -getitemprice `<gun name> | <skin name> <condition>` example: `M4A4 | Howl (Field-Tested)`");
             }
+            else{
+                async function csgoSkins() {
+                    const response = await fetch(api_CSGO);
+                    const data = await response.json();
+    
+                    const csgoEmbed = new MessageEmbed()
+                        .setColor('#0099ff')
+                        .setTitle(`${gunName} | ${skinName} ${condition}`)
+                        .setImage(data.icon)
+                        .addFields({
+                            name: 'Average Price',
+                            value: data.average_price
+                        }, {
+                            name: 'Median Price',
+                            value: data.median_price
+                        }, {
+                            name: 'Lowest Price',
+                            value: data.lowest_price
+                        }, {
+                            name: 'Highest Price',
+                            value: data.highest_price
+                        }, {
+                            name: 'Currency',
+                            value: data.currency
+                        })
+                    message.channel.send({embeds: [csgoEmbed]});
+                }
+                csgoSkins();
+            }
+
+
         }
     }
 });
