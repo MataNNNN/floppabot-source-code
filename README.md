@@ -16,25 +16,25 @@ A picture of gosha (very handsome) <br>
 Your cock size <br>
 <b>-floppalink <br></b>
 A link to the server <br>
--8ball <br>
+<b>-8ball <br></b>
 Ask a question and the bot will answer you <br>
--developer <br>
+<b>-developer <br></b>
 The sexiest man alive <br>
--rps <br>
+<b>-rps <br></b>
 Rock Paper Scissors against me <br>
--dice <br>
+<b>-dice <br></b>
 Will roll two dices <br>
--hot <br>
+<b>-hot <br></b>
 Heads Or Tails <br>
--excusdils <br>
+<b>-excusdils <br></b>
 Exchanges currency from USD to ILS <br>
--excilsusd <br>
+<b>-excilsusd <br></b>
 Exchanges currency from ILS to USD <br>
--getrand <br>
+<b>-getrand <br></b>
 A random number between a range that the user set <br>
--google <br>
+<b>-google <br></b>
 Shows the first image that appear when you search the keyword that the user typed (no bad words) <br>
--getpriceid <br>
+<b>-getpriceid <br></b>
 the price and some other details of a csgo skin
  <br> <br> <br>
 Also as you can see I didn't create any command handler...  so have fun looking at it!
