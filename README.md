@@ -8,13 +8,13 @@ currency api: https://www.exchangerate-api.com <br>
 csgo skin prices api: https://csgobackpack.net the api can be found here: https://csgobackpack.net/api/ <br>
 
 <h3>List of the commands</h3>
--ping <br>
+<b>-ping <br></b>
 Latency <br>
--gosha <br>
+<b>-gosha <br></b>
 A picture of gosha (very handsome) <br>
-<b>-floppacock <br>
+<b>-floppacock <br></b>
 Your cock size <br>
--floppalink <br>
+<b>-floppalink <br></b>
 A link to the server <br>
 -8ball <br>
 Ask a question and the bot will answer you <br>
